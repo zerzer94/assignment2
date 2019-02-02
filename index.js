@@ -47,7 +47,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 var result = JSON.stringify(response, null, 2);
                 var class_col = response.images[0].classifiers[0].classes;
                 class_col.sort(function(a,b){return b.score > a.score;});
-                var i=0, str ="The image has ";
+                var i=0, str ="The image contains ";
                 for (i = 0; i < class_col.length; i++) {
                     if( class_col[i].score > 0.7 &&
                         class_col[i].type_hierarchy !=null){//show iff score > 0.8
