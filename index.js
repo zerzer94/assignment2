@@ -22,7 +22,7 @@ app.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response
 
     function fallback(agent) {
         agent.add(`I didn't understand`);
-        agent.add(`I'm sorry, can you try again?`);
+        agent.add(`I'm sorry, can you try again??`);
     }
 
     function testImage(agent) {
