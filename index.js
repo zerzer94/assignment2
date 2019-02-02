@@ -53,7 +53,7 @@ app.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response
                             class_col[i].type_hierarchy != null) {//show iff score > 0.8
                             if (j > 0) str += ", ";
                             j++
-                            str += class_col[i].class + " ";
+                            str += class_col[i].class;
                             //str += class_col[i].score + "\n ";
                         }
                     }
