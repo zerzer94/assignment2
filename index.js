@@ -47,11 +47,12 @@ app.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response
                     var result = JSON.stringify(response, null, 2);
                     var class_col = response.images[0].classifiers[0].classes;
                     class_col.sort(function (a, b) { return b.score > a.score; });
-                    var i = 0, str = "The image contains ";
+                    var i = 0; var j = 0; str = "The image contains ";
                     for (i = 0; i < class_col.length; i++) {
-                        if (class_col[i].score > 0.7 &&
+                        if (class_col[i].score > 0.5 &&
                             class_col[i].type_hierarchy != null) {//show iff score > 0.8
-                            if (i > 0) str += ", ";
+                            if (j > 0) str += ", ";
+                            j++
                             str += class_col[i].class + " ";
                             //str += class_col[i].score + "\n ";
                         }
